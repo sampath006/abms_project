@@ -8,7 +8,8 @@ to setup-floor-map
   ask patches with [pxcor = -4 and pycor >= -2] [set pcolor brown]
   ask patches with [pycor = -8 and pxcor <= -4] [set pcolor brown]
   ask patches with [pycor = -8 and pxcor >= 2] [set pcolor brown]
-
+  ask patches with [pxcor = 4 and pycor >= 6] [set pcolor brown]
+  ask patches with [pycor = 0 and pxcor > 3] [set pcolor brown]
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
