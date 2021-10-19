@@ -4,7 +4,7 @@ to setup
   reset-ticks
 end
 to setup-floor-map
-  ask patches [set pcolor green]
+
   ask patches with [pxcor = -16 or pxcor = 16 or pycor = -16 or pycor = 16 ] [set pcolor brown]
   ask patches with [pxcor = -4 and pycor >= -2] [set pcolor brown]
   ask patches with [pycor = -8 and pxcor <= -4] [set pcolor brown]
