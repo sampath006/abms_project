@@ -1,6 +1,14 @@
+breed[main-helpers main-helper]
+breed[primary-helpers primary-helper]
+breed[secondary-helpers secondary-helper]
+breed[helpers helper]
+breed[shoppers shopper]
+
+
 to setup
   clear-all
   setup-floor-map
+  setup-people
   reset-ticks
 end
 to setup-floor-map
@@ -16,6 +24,38 @@ to setup-floor-map
   ask patches with [pxcor = -16 and pycor < 16 and pycor > 10] [set pcolor white]
   ask patches with [pycor = -16 and pxcor >= 10 and pxcor < 16] [set pcolor white]
   ask patches with [pxcor = -16 and pycor < -10 and pycor > -16] [set pcolor white]
+end
+to setup-people
+  ask n-of number-of-main-helpers patches with [pcolor  = green][
+    sprout-main-helpers 1[
+      set shape "person"
+      set color blue
+    ]
+  ]
+  ask n-of number-of-primary-helpers  patches with [pcolor  = green][
+    sprout-primary-helpers  1[
+      set shape "person"
+      set color red
+    ]
+  ]
+  ask n-of number-of-secondary-helpers patches with [pcolor  = green][
+    sprout-secondary-helpers 1[
+      set shape "person"
+      set color violet
+    ]
+  ]
+  ask n-of number-of-helpers patches with [pcolor  = green][
+    sprout-helpers 1[
+      set shape "person"
+      set color orange
+    ]
+  ]
+  ask n-of number-of-shoppers patches with [pcolor  = green][
+    sprout-shoppers 1[
+      set shape "person"
+      set color yellow
+    ]
+  ]
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
@@ -61,6 +101,81 @@ NIL
 NIL
 NIL
 1
+
+SLIDER
+9
+126
+194
+159
+number-of-main-helpers
+number-of-main-helpers
+0
+10
+5.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+10
+174
+195
+207
+number-of-primary-helpers
+number-of-primary-helpers
+0
+10
+8.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+10
+222
+197
+255
+number-of-secondary-helpers
+number-of-secondary-helpers
+0
+10
+5.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+12
+272
+184
+305
+number-of-helpers
+number-of-helpers
+0
+10
+5.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+12
+329
+184
+362
+number-of-shoppers
+number-of-shoppers
+0
+100
+50.0
+1
+1
+NIL
+HORIZONTAL
 
 @#$#@#$#@
 ## WHAT IS IT?
